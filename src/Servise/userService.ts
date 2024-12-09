@@ -29,7 +29,10 @@ export const Regest = async ({
     password: hashPasssword,
   });
   await newuser.save();
-  return { data: generateJWT({ firstName, lastName, email }), statusCode: 200 };
+  return {
+    data: generateJWT({ firstName, lastName, email }),
+    statusCode: 200,
+  };
 };
 /////////////////////////
 export const Login = async ({ email, password }: Loginparams) => {

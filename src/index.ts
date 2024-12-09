@@ -2,6 +2,7 @@ import express from "express";
 import userRoute from "./route/userRoute";
 import { setInitiallProducts } from "./Servise/productService";
 import prodRoute from "./route/productRouter";
+import cardRoute from "./route/cartRouter"
 const mongoose = require("mongoose");
 const app = express();
 const port = 5001;
@@ -15,6 +16,7 @@ mongoose
 setInitiallProducts();
 app.use("/user", userRoute);
 app.use("/products", prodRoute);
+app.use("/cart", cardRoute);
 app.listen(port, () => {
   console.log(`Server is running at port ${port}`);
 });
